@@ -1,5 +1,5 @@
-FROM node:12-alpine
-RUN apk add --no-cache python2 g++ make
+FROM node:14-alpine
+RUN apt-get update && apt-get install -y python build-essential
 WORKDIR /app
 COPY . .
 RUN npm install -g jest
