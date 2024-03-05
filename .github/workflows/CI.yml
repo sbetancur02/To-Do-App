@@ -19,7 +19,8 @@ jobs:
     - name: Build
       run: |
         sudo docker build -t sbetancur02/to-do-app ./app --tag sbetancurb/to-do-app-1:latest
-        sudo docker run -p 8080:80 sbetancur02/to-do-app
+        sudo docker container create sbetancur02/to-do-app
+        sudo docker start $(docker ps -a -q)
 
   test:
 
