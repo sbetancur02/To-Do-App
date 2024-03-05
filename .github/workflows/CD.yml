@@ -17,7 +17,7 @@ jobs:
     
     - name : Deploy
       run: |
-        sudo docker stop $(docker ps -a -q)
+        sudo docker stop $(docker ps -qf ancestor=sbetancur02/to-do-app)
         echo "Deployed version:latest"
         sudo docker pull sbetancurb/to-do-app-1:latest
         sudo docker run -d -p 8080:80 sbetancurb/to-do-app-1:latest
