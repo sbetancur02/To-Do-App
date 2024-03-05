@@ -17,8 +17,7 @@ jobs:
     
     - name : Deploy
       run: |
-        sudo docker stop sbetancur02/to-do-app
-        sudo docker rm sbetancur02/to-do-app
+        sudo docker image rm sbetancur02/to-do-app
         echo "Deployed version:latest"
         sudo docker pull sbetancurb/to-do-app-1:latest
         sudo docker run -d -p 3000:3000 sbetancurb/to-do-app-1:latest
