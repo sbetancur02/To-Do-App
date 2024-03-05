@@ -1,5 +1,5 @@
 FROM node:14-alpine
-RUN apt-get update && apt-get install -y python build-essential
+RUN apk update && apk add --no-cache python build-base
 WORKDIR /app
 COPY . .
 RUN npm install -g jest
