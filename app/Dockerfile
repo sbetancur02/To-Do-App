@@ -1,5 +1,5 @@
-FROM node:14-alpine
-RUN apk update && apk add --no-cache python build-base
+FROM node:12-alpine
+RUN apk add --no-cache python2 g++ make
 WORKDIR /app
 COPY . .
 RUN npm install -g jest
