@@ -50,21 +50,3 @@ jobs:
 
     - name: Docker Push
       run: docker push sbetancurb/to-do-app-1
-
-  deploy:
-  
-    runs-on: self-hosted
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    
-    - name : Deploy
-      run: |
-        docker stop $(docker ps -a -q)
-        docker rm $(docker ps -a -q)
-        echo "Deployed version:latest"
-        docker pull sbetancurb/to-do-app-1:latest
-        docker run -d -p 3000:3000 sbetancurb/to-do-app-1:latest
-
-    
