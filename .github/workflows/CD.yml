@@ -17,7 +17,6 @@ jobs:
     
     - name : Deploy
       run: |
-        chmod +x ~/To-Do-App/app/deploy.sh
         sudo ~/To-Do-App/app/deploy.sh
         echo "Deployed version:latest"
         sudo docker pull sbetancurb/to-do-app-1:latest
